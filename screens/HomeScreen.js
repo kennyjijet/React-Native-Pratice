@@ -6,24 +6,95 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
-  Button
+  View
 } from 'react-native';
+import { Button } from 'react-native-elements';
+
+const buttonStyle = StyleSheet.create({
+  bigRed: {
+    color: 'red',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+  loginScreenButton: {
+    marginRight: 40,
+    marginLeft: 40,
+    marginTop: 10,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#fff',
+    backgroundColor: '#DDDDDD',
+  },
+  loginText: {
+    color: '#fff',
+    textAlign: 'center',
+    paddingLeft: 10,
+    paddingRight: 10
+  },
+
+});
+
+const titleStyle = StyleSheet.create({
+
+  loginText: { color: '#000000' }
+
+});
+
+const viewStyle = StyleSheet.create({
+
+  container:
+  {
+    flex: 1,
+    backgroundColor: '#9FA8DA' // Set your own custom Color
+  }
+
+});
+
+
+
+
 class HomeScreen extends React.Component {
+
+
   static navigationOptions = {
     title: 'Welcome',
   };
+
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <Button
-        title="LinksScreen"
-        onPress={() => navigate('LinksScreen', { name: 'Jane' })}
-      />
+      <View style={viewStyle.container}>
+        <Button
+          titleStyle={titleStyle.loginText}
+          buttonStyle={buttonStyle.loginScreenButton}
+          title="HOME"
+          onPress={() => navigate('LinksScreen', { name: 'Jane' })}
+        />
+
+        <Button
+          titleStyle={titleStyle.loginText}
+          buttonStyle={buttonStyle.loginScreenButton}
+          title="INTRODUCTION"
+          onPress={() => navigate('LinksScreen', { name: 'Jane' })}
+        />
+
+        <Button
+          titleStyle={titleStyle.loginText}
+          buttonStyle={buttonStyle.loginScreenButton}
+          title="PLAY ICHING"
+          onPress={() => navigate('LinksScreen', { name: 'Jane' })}
+        />
+      </View>
     );
   }
 }
 export default HomeScreen;
+
+
+
 
 /*
 import * as WebBrowser from 'expo-web-browser';
