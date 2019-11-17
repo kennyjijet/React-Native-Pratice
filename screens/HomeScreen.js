@@ -8,49 +8,16 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
-import { Button } from 'react-native-elements';
 
-const buttonStyle = StyleSheet.create({
-  bigRed: {
-    color: 'red',
-    fontWeight: 'bold',
-    fontSize: 30,
-  },
-  red: {
-    color: 'red',
-  },
-  loginScreenButton: {
-    marginRight: 40,
-    marginLeft: 40,
-    marginTop: 10,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#fff',
-    backgroundColor: '#DDDDDD',
-  },
-  loginText: {
-    color: '#fff',
-    textAlign: 'center',
-    paddingLeft: 10,
-    paddingRight: 10
-  },
+import MyButtons from '../components/MyButtons/MyButtons'
 
-});
-
-const titleStyle = StyleSheet.create({
-
-  loginText: { color: '#000000' }
-
-});
 
 const viewStyle = StyleSheet.create({
-
   container:
   {
     flex: 1,
     backgroundColor: '#9FA8DA' // Set your own custom Color
   }
-
 });
 
 
@@ -58,15 +25,39 @@ const viewStyle = StyleSheet.create({
 
 class HomeScreen extends React.Component {
 
-
   static navigationOptions = {
     title: 'Welcome',
   };
-
+  //navigate('LinksScreen', { name: 'Jane' })
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={viewStyle.container}>
+
+        <MyButtons
+          name="INTRODUCTION"
+          onPress={() => navigate('LinksScreen', { name: 'Jane' })}
+        />
+
+        <MyButtons
+          name="HOW TO PLAY"
+          onPress={() => navigate('LinksScreen', { name: 'Jane' })}
+        />
+
+        <MyButtons
+          name="PLAY ICHING"
+          onPress={() => navigate('LinksScreen', { name: 'Jane' })}
+        />
+      </View>
+    );
+  }
+}
+export default HomeScreen;
+
+/*
+
+
+
         <Button
           titleStyle={titleStyle.loginText}
           buttonStyle={buttonStyle.loginScreenButton}
@@ -87,16 +78,7 @@ class HomeScreen extends React.Component {
           title="PLAY ICHING"
           onPress={() => navigate('LinksScreen', { name: 'Jane' })}
         />
-      </View>
-    );
-  }
-}
-export default HomeScreen;
 
-
-
-
-/*
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import {
