@@ -48,6 +48,10 @@ class HomeScreen extends React.Component {
           name="PLAY ICHING"
           onPress={() => navigate('LinksScreen', { name: 'Jane' })}
         />
+        <MyButtons
+          name="SEAT"
+          onPress={() => navigate('SeatScreen', { name: '' })}
+        />
       </View>
     );
   }
