@@ -6,17 +6,33 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
+  Dimensions 
 } from 'react-native';
 
 import MyButtons from '../components/MyButtons/MyButtons'
 
-
+//if(Platform.OS )
 const viewStyle = StyleSheet.create({
   container:
   {
+    //position:'a',
     flex: 1,
-    backgroundColor: '#9FA8DA' // Set your own custom Color
+    //height: Dimensions.get("window").height,
+    width: '100%',
+    height: '100vh',
+    margin: 0,
+    padding: 0,
+    display: 'flex',
+    //alignContent: 'center'
+     // Set your own custom Color
+    //height: Math.round(Dimensions.get('window').height),
+  },
+  fullHeight:
+  {
+    height: Platform.OS === 'web' ? '100vh' : '100%',
+    backgroundColor: '#9FA8DA',
+    alignItems:'center'
   }
 });
 
@@ -32,7 +48,7 @@ class HomeScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={viewStyle.container}>
+      <View style={viewStyle.fullHeight}>
 
         <MyButtons
           name="INTRODUCTION"
